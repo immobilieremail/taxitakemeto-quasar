@@ -5,6 +5,9 @@ import example from './module-example'
 
 Vue.use(Vuex)
 
+import hotel from 'components/hotel.vue'
+Vue.component('hotel', hotel)
+
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation
