@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>{{ hotel.i18n.en.name }}</h4>
+    <h4><router-link :to="{ name: 'hotel', params: { id: hotel.id }}">{{ hotel.name }}</router-link></h4>
     <p>{{ hotel.streetnumber }} {{ hotel.street }} {{ hotel.postalcode }}</p>
   </div>
 </template>
