@@ -6,14 +6,8 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'hotels', component: () => import('pages/Hotels.vue') },
-      { path: 'test', component: () => import('pages/Test.vue') }
-    ]
-  },
-  {
-    path: '/connect',
-    component: () => import('layouts/Connection.vue'),
-    children: [
-      { path: '', component: () => import('pages/Connect.vue') }
+      { path: 'test', component: () => import('pages/Test.vue') },
+      { path: 'connect', component: () => import('pages/Connect.vue') }
     ]
   }
 ]
