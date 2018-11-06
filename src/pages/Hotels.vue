@@ -28,7 +28,7 @@ export default {
       this.$router.push({path: '/hotels', query: {search: this.userQuery}})
     },
     fetchData: function () {
-      this.$axios.post('/api/search', {userQuery: this.userQuery})
+      this.$axios.post('/api/hotels/search', {userQuery: this.userQuery})
         .then((response) => { this.hotels = response.data })
         .catch(() => {
           this.$q.notify({
