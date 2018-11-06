@@ -46,8 +46,32 @@
     </q-layout-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view :connected="isUserConnected" />
     </q-page-container>
+    <q-layout-footer>
+      <q-page-sticky expand position="bottom">
+        <q-tabs animated align="justify" glossy class="flex">
+            <q-route-tab
+              icon="lock"
+              to="/connect"
+              label="Se connecter"
+              exact
+              slot="title"
+              v-if="isUserConnected === false"
+            />
+            <q-route-tab
+              icon="home"
+              to="/"
+              label="Accueil"
+              exact
+              slot="title"
+              v-else
+            />
+          <q-tab slot="title" name="tab-2" icon="fingerprint" />
+          <q-tab slot="title" name="tab-3" icon="account_box" />
+        </q-tabs>
+      </q-page-sticky>
+    </q-layout-footer>
   </q-layout>
 </template>
 
@@ -56,13 +80,20 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop,
+      isUserConnected: false
     }
+  },
+  created () {
+    this.isUserConnected = this.$store.getters['userdata/isUserConnected']
   },
   methods: {
   }
 }
 </script>
 
-<style>
+<style scoped>
+  .q-tabs {
+    width: 100%;
+  }
 </style>
