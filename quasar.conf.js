@@ -43,6 +43,7 @@ module.exports = function (ctx) {
     framework: {
       components: [
         'QLayout',
+        'QSelect',
         'QLayoutHeader',
         'QLayoutFooter',
         'QLayoutDrawer',
@@ -71,7 +72,13 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
+      config: {
+        notify: {
+          timeout: 500,
+          position: 'center'
+        }
+      }
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
       // i18n: 'de' // Quasar language
     },
