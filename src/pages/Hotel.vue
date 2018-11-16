@@ -9,8 +9,12 @@
 </style>
 
 <script>
+import Hotel from '../components/hotel.vue'
 export default {
   name: 'Hotels',
+  components: {
+    'hotel': Hotel
+  },
   data () {
     return {
       hotel: null
