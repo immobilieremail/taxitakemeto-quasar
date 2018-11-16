@@ -52,6 +52,7 @@
       <q-page-sticky expand position="bottom">
         <q-tabs animated align="justify" glossy class="flex">
             <q-route-tab
+              name="connect"
               icon="lock"
               to="/connect"
               label="Se connecter"
@@ -60,6 +61,7 @@
               v-if="isUserConnected === false"
             />
             <q-route-tab
+              name="home"
               icon="home"
               to="/"
               label="Accueil"
@@ -67,7 +69,15 @@
               slot="title"
               v-else
             />
-          <q-tab slot="title" name="tab-2" label="Créer un compte" icon="fingerprint" />
+            <q-route-tab
+              name="register"
+              icon="fingerprint"
+              to="/register"
+              label="Créer un compte"
+              exact
+              slot="title"
+              v-if="isUserConnected === false"
+            />
           <q-tab slot="title" name="tab-3" label="À propos" icon="account_box" />
         </q-tabs>
       </q-page-sticky>
